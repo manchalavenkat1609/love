@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I Love You, Amma</title>
+</head>
+<body style="margin:0; padding:0; background: linear-gradient(to bottom right, #ffc0cb, #ffe6e6); font-family: 'Segoe UI', sans-serif; overflow-x: hidden;">
+
+  <!-- Floating Hearts -->
+  <style>
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 0.8; }
+      50% { transform: translateY(-50vh) scale(1.1); }
+      100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+    }
+    .heart {
+      position: absolute;
+      animation: float linear infinite;
+      color: rgba(255, 0, 100, 0.3);
+    }
+
+    @keyframes fadeInSlide {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInLeft {
+      from { transform: translateX(-100vw); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .fade-in-slide {
+      animation: fadeInSlide 1.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    .photo-frame {
+      border: 5px solid #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transform: scale(1);
+      transition: transform 0.5s ease;
+      animation: slideInLeft 2s ease-in-out;
+    }
+
+    .photo-frame:hover {
+      transform: scale(1.05);
+    }
+
+    marquee {
+      color: #b30059;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 20px 0;
+      background: rgba(255, 255, 255, 0.3);
+      text-shadow: 1px 1px 2px #fff;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .main-heading {
+      font-size: 64px;
+      color: #d6004f;
+      text-shadow: 3px 3px 8px #fff;
+      animation: pulse 3s infinite;
+    }
+  </style>
+
+  <script>
+    // Floating hearts animation
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = Math.random() * 100 + 'vh';
+      heart.style.fontSize = (20 + Math.random() * 25) + 'px';
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- Top Marquee -->
+  <marquee behavior="scroll" direction="left">💖 Amma, your smile is the brightest light in my universe 💖 You are my peace, my love, my forever 💖</marquee>
+
+  <!-- Main Content -->
+  <div style="text-align: center; padding: 40px 20px;">
+    <h1 class="main-heading fade-in-slide">I Love You, Amma 💞</h1>
+    <p class="fade-in-slide" style="font-size: 22px; color: #5a0033; max-width: 800px; margin: 20px auto;">
+      Every smile of yours is a spark in my soul. Every glance from you is my reason to love harder. This is for you, Amma — my heart, my muse, my everything. 🌹
+    </p>
+
+    <!-- Photo Gallery -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
+      <div class="photo-frame">
+        <img src="h1.jpeg" alt="Amma Pic 1" style="width: 300px; height: auto;">
+      </div>
+      <div class="photo-frame" style="animation-delay: 0.3s;">
+        <img src="h2.jpeg" alt="Amma Pic 2" style="width: 300px; height: auto;">
+      </div>
+      <div class="photo-frame" style="animation-delay: 0.6s;">
+        <img src="h3.jpeg" alt="Amma Pic 3" style="width: 300px; height: auto;">
+      </div>
+    </div>
+
+    <p class="fade-in-slide" style="margin-top: 50px; font-size: 20px; color: #800040;">
+      You are the poem I’ll never stop writing... ❤️
+    </p>
+  </div>
+
+  <!-- Bottom Marquee -->
+  <marquee behavior="alternate" direction="right" style="margin-top: 40px;">💐 With all my love... Forever yours 💌</marquee>
+</body>
+</html>
